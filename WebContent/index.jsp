@@ -1,46 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>CRUDapp</title>
+<title>Country List</title>
 </head>
 <body>
-<div align="center">
-  <h1>CRUD Application</h1>
-  <br/>
-  <h2>User Entry</h2>
-    
-  <form action="/CRUDapp/home" method="post">
-    Country Code: <input type = "text" name = "country_code" />
-    <br />
-    Country Name: <input type = "text" name = "country_name" />
-    <br/>
-    Capital City: <input type = "text" name = "capital_city" />
-    <br/>
-    Currency Code: <input type = "text" name = "currency_code" />
-    <br/>
-    
-    <input type="submit" value="Submit" />
-  </form>
- </div>
- <br/>
- <div align="center">
-  <h2>Results</h2>
-   <table>
-		<c:forEach items = "${list}" var = "country">
-			<tr>
-				<td>${country.countryCode}</td>
-				<td>${country.countryName}</td>
-				<td>${country.capitalCity}</td>
-				<td>${country.currencyCode}</td>
-			</tr>
-		</c:forEach>
+ <div>
+ 	
+  	<h3>Enter new Country</h3>
+ 	<s:form action="home" method="POST">  
+		<s:textfield name="countryCode" label="Country Code"></s:textfield>  
+		<s:textfield name="countryName" label="Country Name"></s:textfield>  
+		<s:textfield name="capitalCity" label="Capital CIty"></s:textfield>  
+		<s:textfield name="currencyCode" label="Currency Code"></s:textfield>  
+		
+		<s:submit value="Save"></s:submit>
+	</s:form>
+	<br/>
+	<h3>Country List</h3>
+ 	<table>
+ 		<!-- <fieldset>   -->
+		<s:iterator  value="list">  
+		<tr>
+			<td><s:property value="countryCode"/></td>
+			<td><s:property value="countryName"/></td>
+			<td><s:property value="capitalCity"/></td>
+			<td><s:property value="currencyCode"/></td>
+		</tr>
+		</s:iterator>  
+   	
+		<!-- </fieldset>   -->
 	</table>
- </div>
+	
+  </div>
 </body>
 </html>

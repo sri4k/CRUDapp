@@ -13,6 +13,46 @@ public class CountryAction {
 	String capitalCity;
 	String currencyCode;
 	
+	public ArrayList<Country> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<Country> list) {
+		this.list = list;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+
+	public String getCountryName() {
+		return countryName;
+	}
+
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
+	}
+
+	public String getCapitalCity() {
+		return capitalCity;
+	}
+
+	public void setCapitalCity(String capitalCity) {
+		this.capitalCity = capitalCity;
+	}
+
+	public String getCurrencyCode() {
+		return currencyCode;
+	}
+
+	public void setCurrencyCode(String currencyCode) {
+		this.currencyCode = currencyCode;
+	}
+
 	public String getCountries() {
      
 		try {
@@ -29,6 +69,7 @@ public class CountryAction {
 
 		try {
 			CountryDao.save(country);
+			list = CountryDao.getCountries();
 			return "success";
 		}catch(Exception e){
 			e.printStackTrace();

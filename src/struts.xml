@@ -8,8 +8,8 @@
 	<constant name="struts.devMode" value="true" />
 	
 	<package name = "default" extends="struts-default">
-		<action name = "country" class="org.app.action.CountryAction" method="getCountries">
-			<result name="success">/country.jsp</result>
+		<action name = "home" class="org.app.action.CountryAction" method="saveCountry">
+			<result name="success">/index.jsp</result>
 			<result name="error">/error.jsp</result>
 		</action>
 	</package>
