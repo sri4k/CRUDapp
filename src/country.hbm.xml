@@ -4,7 +4,7 @@
           "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
 
 <hibernate-mapping>  
-<class name="org.app.model.Country" table="country2">  
+<class name="org.app.model.Country" table="country">  
 <id name="id">  
 <generator class="increment"></generator>  
 </id>  

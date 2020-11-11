@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="CRUDapp" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="antlib:org.apache.ivy.ant ">
+    <property name="build.dir" value="build" />
+    <property name="ivy.lib.dir" value="ivy/" />
+    <target name="clean">
+        <delete dir="${ivy.lib.dir}/"/>
+    </target>
+    <target name="ivyresolve">
+        <delete dir="${ivy.lib.dir}/"/>
+        <ivy:retrieve pattern="${ivy.lib.dir}/[artifact]-[type]-[revision].[ext]" />
+    </target>
+    <target name="ivyreport">
+        <delete dir="${ivy.lib.dir}/ivyreport"/>
+        <ivy:retrieve pattern="${ivy.lib.dir}/ivyreport/[artifact]-[revision].[ext]" conf="eclipse" />
+        <ivy:report conf="eclipse" graph="false" todir="${build.dir}" />
+    </target>
+</project>

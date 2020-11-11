@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ivy-module version="2.0">
+    <info organisation="org.app" module="crud"/>
+    <dependencies>
+        <dependency org="org.apache.struts" name="struts2-core" rev="2.5.25"/>
+        <dependency org="mysql" name="mysql-connector-java" rev="8.0.22"/>
+        <dependency org="org.apache.struts" name="struts2-spring-plugin" rev="2.5.25"/>
+		<dependency org="org.hibernate" name="hibernate-core" rev="5.1.2.Final"/>
+		<dependency org="org.hibernate.common" name="hibernate-commons-annotations" rev="5.1.2.Final"/>
+		<dependency org="org.apache.commons" name="commons-dbcp2" rev="2.8.0">
+		  <exclude name="h2database"/>
+		</dependency>
+       
+    </dependencies>
+</ivy-module>
